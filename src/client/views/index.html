@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<title>NLP</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Khula&family=Taviraj:ital,wght@1,200&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header>
+			<div class="logo">
+				NLP
+			</div>
+		</header>
+		<main>
+			<h1>Find The Perfect Hashtag!</h1>
+			<section>
+				<form class="form" onsubmit="return Hashtags.handleSubmit(event)">
+					<label for="input">Enter URL</label>
+					<input
+						id="input"
+						type="text"
+				
+						placeholder="Your URL"
+					/>
+					<button
+						type="submit"
+						name="submit"
+						class="button"
+						value="submit"
+						onclick='return Hashtags.handleSubmit(event)'
+					>
+						Submit
+					</button>
+				</form>
+			</section>
+		</main>
+		<footer></footer>
+
+		
+	</body>
+</html>
