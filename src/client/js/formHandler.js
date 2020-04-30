@@ -23,10 +23,12 @@ const sendUrl = async (url = '', data = {}) => {
 		.catch((error) => console.log(error));
 };
 
-const getData = async (url = '') => {
-	fetch( url ).then( ( response ) => {
-		return response;
-	}).catch(err => console.log(err))
+const getData = async () => {
+	const response = await fetch( 'http://localhost:4000/all' );
+	console.log( response, 'r' );
+	const jsonResponse = await response.json();
+	console.log( jsonResponse, 'jsonR' );
+	return jsonResponse;
 
 	
 };
@@ -53,11 +55,10 @@ function handleSubmit(event) {
 
 
 const updateUI = async () => {
-	await getData( 'http://localhost:4000/all' ).then( ( result ) => {
-	 const jsonResult = result.json()
- })
+	getData().then( ( result ) => {
+		console.log( 'dateUI', result );
+ }).catch(error => console.error(error))
 
-	console.log('updated info: ',request);
 };
 
 export { handleSubmit };
