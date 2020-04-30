@@ -1,11 +1,11 @@
 //import { isValidUrl } from './validateUrl';
 
-const handleSubmit = (event) => {
+function handleSubmit(event) {
 	event.preventDefault();
 
 	let url = document.getElementById('input').value;
 
-	const isValid = Hashtags.isValidUrl(url);
+	let isValid = Hashtags.isValidUrl(url);
 
 	console.log('::: Form Submitted :::');
 	console.log(url);

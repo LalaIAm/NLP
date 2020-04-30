@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 });
 
 app.listen(PORT, () => {
-	console.log(`running at http://localhost:${PORT}`);
+	console.log(`server is running at http://localhost:${PORT}`);
 });
 
 const getTextAnalysis = (url) => {
