@@ -1,0 +1,36 @@
+$primary-color: #f2012b;
+$light-accent: #8894ab;
+$white: #f3f7f3;
+$dark-accent: #be3e53;
+$dark: #1e141e;
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $light-accent;
+    justify-content: center;
+    color: $dark;
+}
+
+main {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    flex-direction: column;
+    color: $dark;
+
+    h1{
+        font-family: 'Didact Gothic';
+        padding: 3rem;
+        font-size: 3rem;
+    }
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+    min-width: 400px;
+
+    
+}

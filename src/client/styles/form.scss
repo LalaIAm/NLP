@@ -1,0 +1,41 @@
+.form {
+        background: #f3f7f3;
+        padding: 2rem;
+        font-family: 'Khula', serif;
+        font-size: 1.4rem;
+        box-shadow: 2px 3px 6px rgba(20,20,20,0.2), 4px 7px 10px rgba(20,20,20,0.08);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        input {
+            margin-top: 1rem;
+            width: 90%;
+            font-family: 'Taviraj';
+            font-size: 1.1rem;
+            outline: none;
+            border: 1px solid #be3e53;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+
+            
+        }
+
+        button {
+            font-family: 'Taviraj';
+            background-color: #f2012b;
+            outline: none;
+            border: none;
+            margin: 0 auto;
+            color: #f3f7f3;
+            padding: .3rem 1.3rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            border-radius: 10px;
+            box-shadow: 2px 3px 5px rgba(20,20,20,0.2), 3px 4px 6px rgba(20,20,20,0.08), inset 2px 2px 4px rgba(200,200,200,0.2);
+            cursor: pointer;
+        }
+    }
