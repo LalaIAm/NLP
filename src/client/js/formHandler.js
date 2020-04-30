@@ -1,6 +1,6 @@
 const fetch = require( 'node-fetch' );
 
-//import { isValidUrl } from './validateUrl';
+
 const sendUrl = async (url = '', data = {}) => {
 	console.log('post request data: ', data);
 	const myHeaders = new Headers();
@@ -25,9 +25,8 @@ const sendUrl = async (url = '', data = {}) => {
 
 const getData = async () => {
 	const response = await fetch( 'http://localhost:4000/all' );
-	console.log( response, 'r' );
 	const jsonResponse = await response.json();
-	console.log( jsonResponse, 'jsonR' );
+	console.log( jsonResponse, '= jsonResponse' );
 	return jsonResponse;
 
 	
@@ -56,7 +55,7 @@ function handleSubmit(event) {
 
 const updateUI = async () => {
 	getData().then( ( result ) => {
-		console.log( 'dateUI', result );
+		console.log( 'updateUI', result );
  }).catch(error => console.error(error))
 
 };

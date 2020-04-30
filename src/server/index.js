@@ -5,19 +5,17 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const aylien = require('aylien_textapi');
 require( 'dotenv' ).config();
-const analyzeText = require( './NLP' );
-const async = require( 'express-async-await' );
 
 
 let projectData = {};
-let resultsData = []
+
 
 const textapi = new aylien({
 	application_id: process.env.APP_ID,
 	application_key: process.env.API_KEY,
 } );
 
-module.exports = textapi;
+
 
 app.use( bodyParser.urlencoded( { extended: false } ) )
 app.use( bodyParser.json() )
@@ -56,11 +54,7 @@ const addData = async  ( req, res ) => {
 	return projectData;
 }
 
-const sendData = async ( req, res ) => {
-	console.log( 'project data: ', projectData );
-	let jsonData = JSON.stringify( projectData );
-	res.send( jsonData );
-}
+
 
 app.get( '/all', async function ( req, res ) {
 	let asyncData = JSON.stringify( projectData );
