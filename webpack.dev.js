@@ -12,7 +12,10 @@ module.exports = {
 	devtool: 'inline-source-map',
 	devServer: {
 		contentBase: './dist',
-		hot: true,
+        hot: true,
+        proxy: {
+            "/api": "http://localhost:4000"
+        }
 	},
 	output: {
 		libraryTarget: 'var',

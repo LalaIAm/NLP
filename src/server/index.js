@@ -39,7 +39,9 @@ const getTextAnalysis = (url) => {
 				result.results.forEach(function (r) {
 					console.log(r.endpoint + ':');
 					console.log(r.result);
-				});
+				} );
+				projectData.url = result;
+		
 			} else {
 				console.log(err);
 			}
