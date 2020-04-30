@@ -31,6 +31,38 @@ section {
     max-width: 800px;
     margin: 50px auto;
     min-width: 400px;
-
+    box-shadow: 2px 3px 6px rgba(20,20,20,0.2), 4px 7px 10px rgba(20,20,20,0.08);
     
+}
+
+#results-section {
+    margin-top: 2rem;
+    background-color: $dark;
+    color: $light-accent;
+    padding: 3rem;
+    border-radius: 10px;
+
+    h2 {
+        font-size: 1.8rem;
+        color: $primary-color;
+        font-family: 'Didact Gothic';
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        font-family: 'Taviraj';
+        margin-bottom: .5rem;
+    }
+
+    li {
+        font-family: 'Khula';
+        font-size: 1.1rem;
+        padding: .2rem 0;
+    }
+
+    #results-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
 }

@@ -37,5 +37,10 @@
             border-radius: 10px;
             box-shadow: 2px 3px 5px rgba(20,20,20,0.2), 3px 4px 6px rgba(20,20,20,0.08), inset 2px 2px 4px rgba(200,200,200,0.2);
             cursor: pointer;
+            transition: all .3s ease-in;
+        }
+
+        button:hover {
+            background-color: #be3e53;
         }
     }

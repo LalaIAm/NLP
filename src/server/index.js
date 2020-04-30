@@ -7,7 +7,7 @@ const aylien = require('aylien_textapi');
 require( 'dotenv' ).config();
 
 
-let projectData = {};
+let projectData = {}
 
 
 const textapi = new aylien({
@@ -43,7 +43,7 @@ const addData = async  ( req, res ) => {
 		"endpoint": ["hashtags", "sentiment"]
 	}, function ( err, result ) {
 			if ( err === null ) {
-				projectData[ newUrl ] = result.results;
+				projectData = result.results;
 				console.log('fresh', projectData );
 				return projectData;
 			} else {

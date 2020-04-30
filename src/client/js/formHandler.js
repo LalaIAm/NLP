@@ -1,5 +1,5 @@
 const fetch = require( 'node-fetch' );
-const mockData = require( './mockData' );
+
 
 
 const sendUrl = async (url = '', data = {}) => {
@@ -26,17 +26,25 @@ const sendUrl = async (url = '', data = {}) => {
 
 const getData = async () => {
 	const response = await fetch( 'http://localhost:4000/all' );
-	const jsonResponse = await response.json();
-	console.log( jsonResponse, '= jsonResponse' );
-	return jsonResponse;
+	
+	console.log( response, '= Response' );
+
+	const jsonResponse = await response.json()
+	console.log(jsonResponse, '= jsonResponse')
+	return jsonResponse;;
 
 	
 };
 
+const getUserInput = () => {
+	let urlInput = document.getElementById( 'input' ).value 
+	return urlInput;
+}
+
 function handleSubmit(event) {
 	event.preventDefault();
 
-	let url = document.getElementById('input').value;
+	let url = getUserInput();
 
 	let isValid = Hashtags.isValidUrl(url);
 
@@ -57,13 +65,27 @@ function handleSubmit(event) {
 const updateUI = async () => {
 	getData().then( ( result ) => {
 		console.log( 'updateUI', result );
+		if ( !result || result === undefined ) {
+			return;
+		} else {
+			let url = getUserInput();
 
-		const hashtagList = result.map( ( url, i ) => {
-			
-		})
-		console.log(hashtagList, ': hashtag list')
+			let hashtags = result[ 0 ];
+			if ( hashtags === null || hashtags === undefined ) {
+				console.log( 'undefined' )
+				return;
+			}
+			console.log( 'hashtags', hashtags.result.hashtags );
+			let hashtagList = hashtags.result.hashtags;
 
- }).catch(error => console.error(error))
+			let sentiment = result[ 1 ];
+			let sentimentResult = sentiment.result;
+			console.log('sentiment', sentimentResult)
+
+			Hashtags.createHashtags( url, hashtagList, sentimentResult );
+
+		}
+ })
 
 };
 
