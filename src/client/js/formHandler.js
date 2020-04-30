@@ -1,4 +1,5 @@
 const fetch = require( 'node-fetch' );
+const mockData = require( './mockData' );
 
 
 const sendUrl = async (url = '', data = {}) => {
@@ -56,6 +57,12 @@ function handleSubmit(event) {
 const updateUI = async () => {
 	getData().then( ( result ) => {
 		console.log( 'updateUI', result );
+
+		const hashtagList = result.map( ( url, i ) => {
+			
+		})
+		console.log(hashtagList, ': hashtag list')
+
  }).catch(error => console.error(error))
 
 };

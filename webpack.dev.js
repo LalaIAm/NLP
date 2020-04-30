@@ -40,6 +40,10 @@ module.exports = {
 				test: /\.html$/,
 				use: [{ loader: 'html-loader' }],
 			},
+			{
+				test: /\.json$/,
+				loader: 'json-loader'
+			}
 		],
 	},
 	plugins: [
