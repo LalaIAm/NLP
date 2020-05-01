@@ -1,0 +1,27 @@
+#results {
+    margin-top: 2rem;
+    background-color: #1e141e;
+    color: #f3f7f3;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: 'Khula';
+
+    h2 {
+        color: #f2012b;
+        font-size: 1.6rem;
+        font-family: 'Didact Gothic';
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        color: #be3e53;
+        font-size: 1.3rem;
+        font-family: 'Taviraj';
+        margin-bottom: .5rem;
+    }
+
+    #results-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

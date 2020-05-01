@@ -1,12 +1,13 @@
 import { handleSubmit } from './js/formHandler';
 import { isValidUrl } from './js/validateUrl';
-import { createHashtags } from './js/createHashtag';
-import { HashtagList } from './js/createResults';
+import updateUI from './js/createHashtag';
+
 
 import './styles/base.scss';
 import './styles/footer.scss';
 import './styles/form.scss';
 import './styles/header.scss';
 import './styles/resets.scss';
+import './styles/results.scss';
 
-export { handleSubmit, isValidUrl, createHashtags, HashtagList };
+export { handleSubmit, isValidUrl, updateUI };

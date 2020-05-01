@@ -1,83 +1,51 @@
-
-const form = document.getElementById( 'form-section' );
-const resultsSection = document.createElement( 'section' );
-resultsSection.setAttribute( 'id', 'results-section' );
-let heading = document.createElement('h2');
-let subHeading = document.createElement('h3');
+const urlTitle = document.getElementById('results-title');
+const hashtagTitle = document.getElementById('hashtag-title');
+const hashtagContainer = document.getElementById('list-container');
+const sentimentTitle = document.getElementById('sentiment-title');
 
 
-const changeHeading = (text) => {
-	heading.textContent = `${text}`;
-	heading.setAttribute('id', 'url-heading');
-	resultsSection.appendChild( heading );
-	const resultsDiv = document.createElement('div');
-	resultsDiv.setAttribute('id', 'results-container');
-	heading.insertAdjacentElement('afterend', resultsDiv);
-};
+const updateTitle = ( title ) => {
+	urlTitle.textContent = title;
+}
 
+const updateHashtags = (list) => {
+	hashtagTitle.textContent = "H#sht#gs's:"
 
-
-const createHashtagSection = ( list ) => {
+	while (hashtagContainer.hasChildNodes()) {
+		hashtagContainer.removeChild(hashtagContainer.firstChild);
+	}
 	
-	let hashDiv = document.createElement('div');
-	let hashtagList = document.createElement('ul');
-	hashDiv.setAttribute('id', 'hashtag-container');
-	subHeading.textContent = 'Recommended Hashtags:'
-	hashDiv.appendChild( subHeading );
-	
-
 	for (let i = 0; i < list.length; i++) {
 		let li = document.createElement('li');
-
-		li.textContent = list[i];
-		hashtagList.appendChild(li);
+		li.textContent = list[ i ];
+		hashtagContainer.appendChild( li );
 	}
-
-	hashDiv.appendChild( hashtagList );
-	document.getElementById( 'results-container' ).appendChild( hashDiv );
-
 
 };
 
-const createSentimentSection = (result) => {
-	const sentiment = result.polarity;
-	const confidence = result.polarity_confidence;
+const updateSentiment = ( sentimentResult ) => {
+	const polarity = sentimentResult.polarity;
+	const confidence = sentimentResult.polarity_confidence;
 
-	let sentimentDiv = document.createElement( 'div' );
-	sentimentDiv.setAttribute( 'id', 'sentiment-container' )
-	let sentimentTitle = document.createElement( 'h3' );
-	sentimentTitle.textContent = 'Sentiment:';
-	sentimentDiv.appendChild( sentimentTitle );
+	const sentimentText = document.getElementById( 'sentiment' )
+	const confidenceText = document.getElementById( 'confidence' );
 
-	let sentimentList = document.createElement('ul')
+	sentimentText.textContent = 'Sentiment: ' + polarity;
+	confidenceText.textContent = 'Confidence: ' + confidence.toFixed( 2 ) * 100 + '%';
+	sentimentTitle.textContent = 'Sentiment'
 
-	let sLi = document.createElement( 'li' );
-	sLi.textContent = 'Sentiment: ' + sentiment;
-	let cLi = document.createElement( 'li' )
-	cLi.textContent = 'Confidence: ' + confidence.toFixed(2)
-
-	sentimentList.appendChild( sLi );
-	sentimentList.appendChild( cLi );
-
-	sentimentDiv.appendChild( sentimentList );
-
-	document.getElementById( 'results-container' ).appendChild( sentimentDiv );
-	
 
 }
 
-const createHashtags = ( text, list, result ) => {
-	let section = document.getElementById( 'results-section' );
 
-	if ( section ) {
-		section.remove();
-		section = null;
-	}
+	
 
-	form.insertAdjacentElement( 'afterend', resultsSection );
-	changeHeading( text );
-	createHashtagSection( list );
-	createSentimentSection( result );
+
+const updateUI = ( hashtags, title, sentiment ) => {
+	updateHashtags( hashtags );
+	updateTitle( title );
+	updateSentiment( sentiment );
+	
 };
 
-export { createHashtags };
+module.exports = updateUI

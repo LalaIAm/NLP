@@ -16,30 +16,38 @@
 		</header>
 		<main>
 			<h1>Find The Perfect Hashtag!</h1>
-			<section id='form-section'>
+			<section id="form-section">
 				<form class="form" onsubmit="return Hashtags.handleSubmit(event)">
 					<label for="input">Enter URL</label>
-					<input
-						id="input"
-						type="text"
-				
-						placeholder="Your URL"
-					/>
+					<input id="input" type="text" placeholder="Your URL" />
 					<button
 						type="submit"
 						name="submit"
 						class="button"
 						value="submit"
-						onclick='return Hashtags.handleSubmit(event)'
+						onclick="return Hashtags.handleSubmit(event)"
 					>
 						Submit
 					</button>
 				</form>
 			</section>
-			
+			<section id="results">
+				<h2 id="results-title"></h2>
+				<div id="results-container">
+					<div id="hashtags">
+						<h3 id="hashtag-title"></h3>
+						<ul id="list-container"></ul>
+					</div>
+					<div>
+						<h3 id="sentiment-title"></h3>
+						<p id="sentiment"></p>
+						<p id="confidence"></p>
+					</div>
+				</div>
+			</section>
 		</main>
-		<footer></footer>
-
-		
+		<footer>
+			<p id='copyright'>&copy;2020. Hashtags</p>
+		</footer>
 	</body>
 </html>

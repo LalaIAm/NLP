@@ -82,7 +82,7 @@ const updateUI = async () => {
 			let sentimentResult = sentiment.result;
 			console.log('sentiment', sentimentResult)
 
-			Hashtags.createHashtags( url, hashtagList, sentimentResult );
+			Hashtags.updateUI( hashtagList, url, sentimentResult );
 
 		}
  })
